@@ -2,33 +2,32 @@
 
 namespace CodeRetreatTests;
 
-use CodeRetreat\OnePattern;
+use CodeRetreat\Patterns\OnePattern;
 use PHPUnit\Framework\TestCase;
 
 class PatternTest extends TestCase
 {
     /**
      * @test
-     * @dataProvider dataProver
+     * @dataProvider dataProviderForOnePattern
      */
-    public function oneShouldHaveABlankBottomCharacter($expectedCharacter, $functionName)
+    public function testPatternOneCharacters($expectedCharacter, $functionName)
     {
         $onePattern = new OnePattern();
-        $bottom = $onePattern->$functionName();
 
-        $this->assertEquals($expectedCharacter, $bottom->value());
+        $this->assertEquals($expectedCharacter, $onePattern->$functionName());
     }
 
-    public function dataProver()
+    public function dataProviderForOnePattern()
     {
-        return  [
-            [" ", "topCharacter"],
-            [" ", "topLeftCharacter"],
-            ["|", "topRightCharacter"],
-            [" ", "middleCharacter"],
-            [" ", "bottomLeftCharacter"],
-            ["|", "bottomRightCharacter"],
-            [" ", "bottomCharacter"],
+        return [
+            "topLeft" => [" ", "topLeftCharacter"],
+            "top" => [" ", "topCharacter"],
+            "topRight" => ["|", "topRightCharacter"],
+            "middle" => [" ", "middleCharacter"],
+            "bottomLeft" => [" ", "bottomLeftCharacter"],
+            "bottom" => [" ", "bottomCharacter"],
+            "bottomRight" => ["|", "bottomRightCharacter"],
         ];
     }
 }
