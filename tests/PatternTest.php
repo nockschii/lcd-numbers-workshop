@@ -15,7 +15,7 @@ class PatternTest extends TestCase
         $onePattern = new OnePattern();
         $top = $onePattern->topCharacter();
 
-        $this->assertEquals(" ", $top);
+        $this->assertEquals(" ", $top->value());
     }
 
     /**
@@ -26,7 +26,7 @@ class PatternTest extends TestCase
         $onePattern = new OnePattern();
         $topRight = $onePattern->topRightCharacter();
 
-        $this->assertEquals("|", $topRight);
+        $this->assertEquals("|", $topRight->value());
     }
 
     /**
@@ -37,7 +37,7 @@ class PatternTest extends TestCase
         $onePattern = new OnePattern();
         $topRight = $onePattern->topRightCharacter();
 
-        $this->assertEquals("|", $topRight);
+        $this->assertEquals("|", $topRight->value());
     }
 
     /**
@@ -48,7 +48,7 @@ class PatternTest extends TestCase
         $onePattern = new OnePattern();
         $middle = $onePattern->middleCharacter();
 
-        $this->assertEquals(" ", $middle);
+        $this->assertEquals(" ", $middle->value());
     }
 
     /**
@@ -59,7 +59,7 @@ class PatternTest extends TestCase
         $onePattern = new OnePattern();
         $bottomRight = $onePattern->bottomRight();
 
-        $this->assertEquals("|", $bottomRight);
+        $this->assertEquals("|", $bottomRight->value());
     }
 
     /**
@@ -70,7 +70,7 @@ class PatternTest extends TestCase
         $onePattern = new OnePattern();
         $bottomLeft = $onePattern->bottomLeft();
 
-        $this->assertEquals(" ", $bottomLeft);
+        $this->assertEquals(" ", $bottomLeft->value());
     }
 
     /**
@@ -81,6 +81,6 @@ class PatternTest extends TestCase
         $onePattern = new OnePattern();
         $bottom = $onePattern->bottom();
 
-        $this->assertEquals(" ", $bottom);
+        $this->assertEquals(" ", $bottom->value());
     }
 }

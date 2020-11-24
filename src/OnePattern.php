@@ -3,6 +3,7 @@
 namespace CodeRetreat;
 
 use CodeRetreat\Characters\BlankCharacter;
+use CodeRetreat\Characters\Character;
 use CodeRetreat\Characters\VerticalCharacter;
 
 class OnePattern
@@ -24,33 +25,33 @@ class OnePattern
         $this->bottom = new BlankCharacter();
     }
 
-    public function topCharacter()
+    public function topCharacter(): Character
     {
-        return $this->top->value();
+        return $this->top;
     }
 
-    public function topRightCharacter()
+    public function topRightCharacter(): Character
     {
-        return $this->topRight->value();
+        return $this->topRight;
     }
 
-    public function middleCharacter()
+    public function middleCharacter(): Character
     {
-        return $this->middle->value();
+        return $this->middle;
     }
 
-    public function bottomRight()
+    public function bottomRight(): Character
     {
-        return $this->bottomRight->value();
+        return $this->bottomRight;
     }
 
-    public function bottomLeft()
+    public function bottomLeft(): Character
     {
-        return $this->bottomLeft->value();
+        return $this->bottomLeft;
     }
 
-    public function bottom()
+    public function bottom(): Character
     {
-        return $this->bottom->value();
+        return $this->bottom;
     }
 }
