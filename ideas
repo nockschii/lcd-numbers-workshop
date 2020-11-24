@@ -3,9 +3,14 @@ class for each number containing a array structure
 Input
 Output
 
-Digit (size, pattern)
+NumberConverter
+
+Digit (size, Pattern)
   Zero (Pattern)
   ...
+
+Pattern
+
 Size (amount)
 
 4x7
