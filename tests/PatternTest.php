@@ -9,78 +9,26 @@ class PatternTest extends TestCase
 {
     /**
      * @test
+     * @dataProvider dataProver
      */
-    public function oneShouldHaveABlankTopCharacter()
+    public function oneShouldHaveABlankBottomCharacter($expectedCharacter, $functionName)
     {
         $onePattern = new OnePattern();
-        $top = $onePattern->topCharacter();
+        $bottom = $onePattern->$functionName();
 
-        $this->assertEquals(" ", $top->value());
+        $this->assertEquals($expectedCharacter, $bottom->value());
     }
 
-    /**
-     * @test
-     */
-    public function oneShouldHaveAVerticalTopRightCharacter()
+    public function dataProver()
     {
-        $onePattern = new OnePattern();
-        $topRight = $onePattern->topRightCharacter();
-
-        $this->assertEquals("|", $topRight->value());
-    }
-
-    /**
-     * @test
-     */
-    public function oneShouldHaveABlankTopLeftCharacter()
-    {
-        $onePattern = new OnePattern();
-        $topRight = $onePattern->topRightCharacter();
-
-        $this->assertEquals("|", $topRight->value());
-    }
-
-    /**
-     * @test
-     */
-    public function oneShouldHaveABlankMiddleCharacter()
-    {
-        $onePattern = new OnePattern();
-        $middle = $onePattern->middleCharacter();
-
-        $this->assertEquals(" ", $middle->value());
-    }
-
-    /**
-     * @test
-     */
-    public function oneShouldHaveABlankBottomRightCharacter()
-    {
-        $onePattern = new OnePattern();
-        $bottomRight = $onePattern->bottomRight();
-
-        $this->assertEquals("|", $bottomRight->value());
-    }
-
-    /**
-     * @test
-     */
-    public function oneShouldHaveABlankBottomLeftCharacter()
-    {
-        $onePattern = new OnePattern();
-        $bottomLeft = $onePattern->bottomLeft();
-
-        $this->assertEquals(" ", $bottomLeft->value());
-    }
-
-    /**
-     * @test
-     */
-    public function oneShouldHaveABlankBottomCharacter()
-    {
-        $onePattern = new OnePattern();
-        $bottom = $onePattern->bottom();
-
-        $this->assertEquals(" ", $bottom->value());
+        return  [
+            [" ", "topCharacter"],
+            [" ", "topLeftCharacter"],
+            ["|", "topRightCharacter"],
+            [" ", "middleCharacter"],
+            [" ", "bottomLeftCharacter"],
+            ["|", "bottomRightCharacter"],
+            [" ", "bottomCharacter"],
+        ];
     }
 }

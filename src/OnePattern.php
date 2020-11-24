@@ -9,15 +9,17 @@ use CodeRetreat\Characters\VerticalCharacter;
 class OnePattern
 {
     private $top;
+    private $topLeft;
     private $topRight;
     private $middle;
-    private $bottomRight;
     private $bottomLeft;
+    private $bottomRight;
     private $bottom;
 
     public function __construct()
     {
         $this->top = new BlankCharacter();
+        $this->topLeft = new BlankCharacter();
         $this->topRight = new VerticalCharacter();
         $this->middle = new BlankCharacter();
         $this->bottomRight = new VerticalCharacter();
@@ -35,22 +37,27 @@ class OnePattern
         return $this->topRight;
     }
 
+    public function topLeftCharacter(): Character
+    {
+        return $this->topLeft;
+    }
+
     public function middleCharacter(): Character
     {
         return $this->middle;
     }
 
-    public function bottomRight(): Character
+    public function bottomRightCharacter(): Character
     {
         return $this->bottomRight;
     }
 
-    public function bottomLeft(): Character
+    public function bottomLeftCharacter(): Character
     {
         return $this->bottomLeft;
     }
 
-    public function bottom(): Character
+    public function bottomCharacter(): Character
     {
         return $this->bottom;
     }
